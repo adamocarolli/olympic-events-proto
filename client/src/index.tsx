@@ -10,20 +10,22 @@ import "./style.css";
 import 'bootstrap/dist/css/bootstrap.min';
 import '@uncharted.software/lex/dist/lex.css';
 
+const ATHLETE_EVENTS_DATASET_URL = 'https://raw.githubusercontent.com/adamocarolli/olympic-events-proto/main/data/athlete_events.json';
+const COUNTRIES_GEOJSON_DATASET_URL = 'https://raw.githubusercontent.com/adamocarolli/olympic-events-proto/main/data/countries_geo.json';
 
 function App() {
   const [filters, setFilters] = useState([]);
   let athleteEvents;
   let countriesGeoFeatures;
   // NOTE: Here we load the athlete events data into the client, while useful for a quick demo,
-  //       this is not a scalable approach and causes slow network loading times (1-2 seconds on my connection)
+  //       this is not a scalable approach and causes slow network loading times (2-4 seconds on my connection pre-cache)
   //       along with possible memory/CPU issues depending on the users device.
   //       See the `query-engine.ts` utility file for a description of a server-side approach.
   const { data } = useAsync({
     promiseFn: loadRemoteJsonData,
     urls: [
-      'https://raw.githubusercontent.com/adamocarolli/files/main/athlete_events.json',
-      'https://raw.githubusercontent.com/adamocarolli/files/main/countries_geo.json',
+      ATHLETE_EVENTS_DATASET_URL,
+      COUNTRIES_GEOJSON_DATASET_URL,
     ]
   });
   if (data) {
