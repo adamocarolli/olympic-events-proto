@@ -5,6 +5,23 @@ export const LEX_VALUE_TYPES = {
   STRING: 'string',
 }
 
+export const LEX_RELATIONSHIP_TYPES = {
+  [LEX_VALUE_TYPES.NUMERIC]: {
+    EQUALS: 'equals',
+    DOES_NOT_EQUAL: 'does not equal',
+    LESS_THAN: 'less than',
+    GREATER_THAN: 'greater than',
+    BETWEEN: 'between'
+  },
+  [LEX_VALUE_TYPES.STRING]: {
+    IS: 'is',
+    IS_NOT: 'is not',
+    IS_LIKE: 'is like',
+    CONTAINS: 'contains',
+    DOES_NOT_CONTAIN: 'does not contain',
+  }
+}
+
 // NOTE: `initializeLex` configures and creates a Lex searchbar component. The Lex library works as
 //       finite state machine where a user steps through each state in order to build a search filter.
 //       This function defines the search language used by Lex, for more info see:
@@ -16,10 +33,18 @@ export const initializeLex = (onSearchChange: (filters: any) => void) => {
     .from('field', ValueState, {
       name: 'Choose a field to search',
       suggestions: [
+        // TODO: Use an ENUM options value type instead of a STRING value type for most of the string
+        //       fields. Provide ENUM options as a dropdown list for the user to select from.
         new ValueStateValue('Age', { type: LEX_VALUE_TYPES.NUMERIC }),
+        new ValueStateValue('Sex', { type: LEX_VALUE_TYPES.STRING }),
+        new ValueStateValue('Year', { type: LEX_VALUE_TYPES.NUMERIC }),
+        new ValueStateValue('Season', { type: LEX_VALUE_TYPES.STRING }),
+        new ValueStateValue('Sport', { type: LEX_VALUE_TYPES.STRING }),
         new ValueStateValue('Height', { type: LEX_VALUE_TYPES.NUMERIC }),
         new ValueStateValue('Weight', { type: LEX_VALUE_TYPES.NUMERIC }),
-        new ValueStateValue('Sex', { type: LEX_VALUE_TYPES.STRING }),
+        new ValueStateValue('City', { type: LEX_VALUE_TYPES.STRING }),
+        new ValueStateValue('Medal', { type: LEX_VALUE_TYPES.STRING }),
+        new ValueStateValue('Name', { type: LEX_VALUE_TYPES.STRING }),
       ],
       // TODO: Add font-awesome magnifying glass icon here.
       icon: '<span></span>'
