@@ -1,6 +1,6 @@
 # Olympic Athlete Events Visualization Prototype
 
-![Hero](https://raw.githubusercontent.com/adamocarolli/olympic-events-proto/main/media/hero.png)
+![Hero](https://raw.githubusercontent.com/adamocarolli/olympic-events-proto/main/client/media/hero.png)
 
 Data can be found here: https://www.kaggle.com/samruddhim/olympics-althlete-events-analysis
 
