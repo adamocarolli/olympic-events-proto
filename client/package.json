@@ -1,0 +1,53 @@
+{
+  "name": "olympic-events-proto",
+  "version": "0.1.0",
+  "description": "",
+  "main": "script.js",
+  "type": "module",
+  "sideEffects": [
+    "src/index.d.ts"
+  ],
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "node build.js",
+    "start": "npm run build -- -w"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@es-pack/esbuild-sass-plugin": "^1.0.4",
+    "@luncheon/esbuild-plugin-gzip": "^0.1.0",
+    "@types/lodash-es": "^4.17.4",
+    "@typescript-eslint/eslint-plugin": "^5.3.0",
+    "@typescript-eslint/parser": "^5.3.0",
+    "esbuild": "^0.13.15",
+    "esbuild-serve": "^1.0.1",
+    "eslint": "^7.32.0",
+    "eslint-config-standard": "^16.0.3",
+    "eslint-plugin-import": "^2.25.2",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^5.1.1",
+    "essass": "^1.1.0",
+    "yargs": "^17.2.1"
+  },
+  "dependencies": {
+    "@types/react": "^17.0.36",
+    "@types/react-dom": "^17.0.11",
+    "@uncharted.software/lex": "^1.0.1",
+    "bootstrap": "4.5.x",
+    "d3": "^7.1.1",
+    "deck.gl": "^8.6.4",
+    "element-resize-detector": "1.1.x",
+    "flatpickr": "4.6.x",
+    "mathjs": "^10.0.0",
+    "moment": "2.24.x",
+    "moment-timezone": "0.5.x",
+    "preact": "8.x",
+    "react": "^17.0.2",
+    "react-async": "^10.0.1",
+    "react-dom": "^17.0.2",
+    "react-icons": "^4.3.1",
+    "react-map-gl": "^6.1.17"
+  }
+}

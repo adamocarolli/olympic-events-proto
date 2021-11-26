@@ -1,0 +1,5 @@
+node_modules
+dist/*
+# TODO: Remove the need for an index.html file within dist folder for deployment.
+!dist/index.html
+yarn-error.log

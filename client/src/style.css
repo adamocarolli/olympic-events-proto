@@ -1,0 +1,37 @@
+html, body, #root {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  background: hsl(180, 5%, 93%);
+}
+
+.search-bar {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  z-index: 9999;
+  width: 100%;
+  background-color: hsl(0, 0%, 99%);;
+}
+
+/* Lex Style Overrides */
+/* TODO: Override box shadow color set by Lex when focusing on search bar */
+/* TODO: Prevent search options dropdown from clipping under search bar */
+.search-bar .lex-box {
+  display: flex;
+  align-items: center;
+  height: 62px;
+  box-shadow: none;
+  border-inline: solid hsl(0, 0%, 68%) 1px;
+}
+.search-bar .form-control {
+  border-radius: 0;
+}
+#lex-assistant-box {
+  top: 1000px;
+}
+#lex-assistant-box .selectable:hover {
+  background-color: hsl(0, 0%, 92%);
+  color: black;
+}
+
